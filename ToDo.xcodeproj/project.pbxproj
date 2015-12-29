@@ -41,6 +41,7 @@
 		918455E01C328BB1002EE58C /* ToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		918455E51C328BB1002EE58C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		918455E61C328BB1002EE58C /* ToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTests.swift; sourceTree = "<group>"; };
+		91F1FA311C32966600F66884 /*  ToDoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = " ToDoApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		92269EE0AABDBB196959E85B /* libPods-ToDo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToDo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +103,7 @@
 				918455D91C328BB1002EE58C /* LaunchScreen.xib */,
 				918455CF1C328BB1002EE58C /* ToDo.xcdatamodeld */,
 				918455CB1C328BB1002EE58C /* Supporting Files */,
+				91F1FA311C32966600F66884 /*  ToDoApp-Bridging-Header.h */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -407,6 +409,7 @@
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./ToDo/ ToDoApp-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -418,6 +421,7 @@
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./ToDo/ ToDoApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
