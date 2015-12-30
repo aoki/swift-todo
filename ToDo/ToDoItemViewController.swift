@@ -4,9 +4,13 @@ class ToDoItemViewController: UIViewController {
 
   @IBOutlet weak var todoField: UITextField!
 
+  var task: ToDo? = nil
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    if let taskTodo = task {
+      todoField.text = taskTodo.item
+    }
   }
 
   override func didReceiveMemoryWarning() {
@@ -19,11 +23,28 @@ class ToDoItemViewController: UIViewController {
   }
 
   @IBAction func save(sender: UIBarButtonItem) {
-    let newTask: ToDo = ToDo.MR_createEntity() as! ToDo
-    newTask.item = todoField.text
-    newTask.managedObjectContext!.MR_saveToPersistentStoreAndWait()
+
+    // TODO: Scalaのmatchっぽく書きたい
+    if task != nil {
+      editTask()
+    } else {
+      createTask()
+    }
 
     navigationController!.popViewControllerAnimated(true)
+  }
+
+  private func createTask() -> Void {
+    println("CREATAE TASK")
+    let newTask: ToDo = ToDo.MR_createEntity() as ToDo
+    newTask.item = todoField.text
+    newTask.managedObjectContext!.MR_saveToPersistentStoreAndWait()
+  }
+
+  private func editTask() -> Void {
+    println("EDIT TASK")
+    task?.item = todoField.text
+    task?.managedObjectContext!.MR_saveToPersistentStoreAndWait()
   }
 
   /*

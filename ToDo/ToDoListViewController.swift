@@ -18,6 +18,23 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
     return cell
   }
   
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if editingStyle == .Delete {
+        todoEntities.removeAtIndex(indexPath.row).MR_deleteEntity()
+        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
+        tableView.reloadData()
+    }
+  }
+
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // TODO: 文字列比較以外の方法は？
+    if segue.identifier == "edit" {
+      let todoController = segue.destinationViewController as! ToDoItemViewController
+      let task = todoEntities[tableView.indexPathForSelectedRow()!.row]
+      todoController.task = task
+    }
+  }
+
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     todoEntities = ToDo.MR_findAll() as? [ToDo]
