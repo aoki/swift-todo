@@ -8,11 +8,11 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
   var todoEntities: [ToDo]!
 
   
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return todoEntities.count
   }
 
-  func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("ToDoListItem") as! UITableViewCell
     cell.textLabel!.text = todoEntities[indexPath.row].item
     return cell
