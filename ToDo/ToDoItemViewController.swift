@@ -23,14 +23,10 @@ class ToDoItemViewController: UIViewController {
   }
 
   @IBAction func save(sender: UIBarButtonItem) {
-
-    // TODO: Scalaのmatchっぽく書きたい
-    if task != nil {
-      editTask()
-    } else {
-      createTask()
+    switch task {
+      case let .None: createTask()
+      case let .Some(taskItem): editTask()
     }
-
     navigationController!.popViewControllerAnimated(true)
   }
 
