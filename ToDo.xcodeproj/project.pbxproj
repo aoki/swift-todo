@@ -15,6 +15,7 @@
 		918455D81C328BB1002EE58C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 918455D71C328BB1002EE58C /* Images.xcassets */; };
 		918455DB1C328BB1002EE58C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 918455D91C328BB1002EE58C /* LaunchScreen.xib */; };
 		918455E71C328BB1002EE58C /* ToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918455E61C328BB1002EE58C /* ToDoTests.swift */; };
+		91C41E321C34422400E85AF9 /* StoryboardAutoGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C41E311C34422400E85AF9 /* StoryboardAutoGen.swift */; };
 		91F1FA351C336F3C00F66884 /* ToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1FA341C336F3C00F66884 /* ToDoItemViewController.swift */; };
 		91F1FA3F1C3374D400F66884 /* ToDoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1FA3E1C3374D400F66884 /* ToDoListTableViewCell.swift */; };
 		91F1FA411C3374EA00F66884 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1FA401C3374EA00F66884 /* ToDo.swift */; };
@@ -44,6 +45,7 @@
 		918455E01C328BB1002EE58C /* ToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		918455E51C328BB1002EE58C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		918455E61C328BB1002EE58C /* ToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTests.swift; sourceTree = "<group>"; };
+		91C41E311C34422400E85AF9 /* StoryboardAutoGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardAutoGen.swift; sourceTree = "<group>"; };
 		91F1FA341C336F3C00F66884 /* ToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemViewController.swift; sourceTree = "<group>"; };
 		91F1FA3E1C3374D400F66884 /* ToDoListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewCell.swift; sourceTree = "<group>"; };
 		91F1FA401C3374EA00F66884 /* ToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		918455CA1C328BB1002EE58C /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				91C41E311C34422400E85AF9 /* StoryboardAutoGen.swift */,
 				91F1FA401C3374EA00F66884 /* ToDo.swift */,
 				918455CD1C328BB1002EE58C /* AppDelegate.swift */,
 				91F1FA3E1C3374D400F66884 /* ToDoListTableViewCell.swift */,
@@ -163,6 +166,7 @@
 				918455C61C328BB1002EE58C /* Resources */,
 				C2B96FFB671AF47872F381C2 /* Copy Pods Resources */,
 				CD4EE738E28E6EA2A956772A /* Embed Pods Frameworks */,
+				91C41E301C34403200E85AF9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -251,6 +255,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		91C41E301C34403200E85AF9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftgen storyboards ${SRCROOT}/${PRODUCT_NAME}/Base.lproj/Main.storyboard > ${SRCROOT}/${PRODUCT_NAME}/StoryboardAutoGen.swift";
+		};
 		A400BFF66C5C3553FF3E40B2 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,6 +322,7 @@
 			files = (
 				91F1FA351C336F3C00F66884 /* ToDoItemViewController.swift in Sources */,
 				91F1FA3F1C3374D400F66884 /* ToDoListTableViewCell.swift in Sources */,
+				91C41E321C34422400E85AF9 /* StoryboardAutoGen.swift in Sources */,
 				918455D31C328BB1002EE58C /* ToDoListViewController.swift in Sources */,
 				91F1FA411C3374EA00F66884 /* ToDo.swift in Sources */,
 				918455CE1C328BB1002EE58C /* AppDelegate.swift in Sources */,

@@ -28,7 +28,8 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // TODO: 文字列比較以外の方法は？
-    if segue.identifier == "edit" {
+    // TODO: 少し改善したけど、まだString
+    if segue.identifier == StoryboardSegue.Main.Edit.rawValue {
       let todoController = segue.destinationViewController as! ToDoItemViewController
       let task = todoEntities[tableView.indexPathForSelectedRow!.row]
       todoController.task = task
