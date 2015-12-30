@@ -10,11 +10,14 @@
 		3FF8B8E5A5BFF8D7E5144871 /* libPods-ToDo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92269EE0AABDBB196959E85B /* libPods-ToDo.a */; };
 		918455CE1C328BB1002EE58C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918455CD1C328BB1002EE58C /* AppDelegate.swift */; };
 		918455D11C328BB1002EE58C /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 918455CF1C328BB1002EE58C /* ToDo.xcdatamodeld */; };
-		918455D31C328BB1002EE58C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918455D21C328BB1002EE58C /* ViewController.swift */; };
+		918455D31C328BB1002EE58C /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918455D21C328BB1002EE58C /* ToDoListViewController.swift */; };
 		918455D61C328BB1002EE58C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918455D41C328BB1002EE58C /* Main.storyboard */; };
 		918455D81C328BB1002EE58C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 918455D71C328BB1002EE58C /* Images.xcassets */; };
 		918455DB1C328BB1002EE58C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 918455D91C328BB1002EE58C /* LaunchScreen.xib */; };
 		918455E71C328BB1002EE58C /* ToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918455E61C328BB1002EE58C /* ToDoTests.swift */; };
+		91F1FA351C336F3C00F66884 /* ToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1FA341C336F3C00F66884 /* ToDoItemViewController.swift */; };
+		91F1FA3F1C3374D400F66884 /* ToDoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1FA3E1C3374D400F66884 /* ToDoListTableViewCell.swift */; };
+		91F1FA411C3374EA00F66884 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1FA401C3374EA00F66884 /* ToDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +37,7 @@
 		918455CC1C328BB1002EE58C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		918455CD1C328BB1002EE58C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		918455D01C328BB1002EE58C /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
-		918455D21C328BB1002EE58C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		918455D21C328BB1002EE58C /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		918455D51C328BB1002EE58C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		918455D71C328BB1002EE58C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		918455DA1C328BB1002EE58C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,6 +45,9 @@
 		918455E51C328BB1002EE58C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		918455E61C328BB1002EE58C /* ToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTests.swift; sourceTree = "<group>"; };
 		91F1FA311C32966600F66884 /*  ToDoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = " ToDoApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		91F1FA341C336F3C00F66884 /* ToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemViewController.swift; sourceTree = "<group>"; };
+		91F1FA3E1C3374D400F66884 /* ToDoListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewCell.swift; sourceTree = "<group>"; };
+		91F1FA401C3374EA00F66884 /* ToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		92269EE0AABDBB196959E85B /* libPods-ToDo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToDo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,14 +102,17 @@
 		918455CA1C328BB1002EE58C /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				91F1FA401C3374EA00F66884 /* ToDo.swift */,
 				918455CD1C328BB1002EE58C /* AppDelegate.swift */,
-				918455D21C328BB1002EE58C /* ViewController.swift */,
+				91F1FA3E1C3374D400F66884 /* ToDoListTableViewCell.swift */,
+				918455D21C328BB1002EE58C /* ToDoListViewController.swift */,
+				91F1FA341C336F3C00F66884 /* ToDoItemViewController.swift */,
+				91F1FA311C32966600F66884 /*  ToDoApp-Bridging-Header.h */,
 				918455D41C328BB1002EE58C /* Main.storyboard */,
 				918455D71C328BB1002EE58C /* Images.xcassets */,
 				918455D91C328BB1002EE58C /* LaunchScreen.xib */,
 				918455CF1C328BB1002EE58C /* ToDo.xcdatamodeld */,
 				918455CB1C328BB1002EE58C /* Supporting Files */,
-				91F1FA311C32966600F66884 /*  ToDoApp-Bridging-Header.h */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -276,7 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				918455D31C328BB1002EE58C /* ViewController.swift in Sources */,
+				91F1FA351C336F3C00F66884 /* ToDoItemViewController.swift in Sources */,
+				91F1FA3F1C3374D400F66884 /* ToDoListTableViewCell.swift in Sources */,
+				918455D31C328BB1002EE58C /* ToDoListViewController.swift in Sources */,
+				91F1FA411C3374EA00F66884 /* ToDo.swift in Sources */,
 				918455CE1C328BB1002EE58C /* AppDelegate.swift in Sources */,
 				918455D11C328BB1002EE58C /* ToDo.xcdatamodeld in Sources */,
 			);
