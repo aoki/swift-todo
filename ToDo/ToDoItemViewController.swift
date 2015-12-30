@@ -24,22 +24,22 @@ class ToDoItemViewController: UIViewController {
 
   @IBAction func save(sender: UIBarButtonItem) {
     switch task {
-      case let .None: createTask()
-      case let .Some(taskItem): editTask()
+      case .None: createTask()
+      case .Some(_): editTask()
     }
     navigationController!.popViewControllerAnimated(true)
   }
 
   private func createTask() -> Void {
-    println("CREATAE TASK")
+    print("CREATAE TASK")
     let newTask: ToDo = ToDo.MR_createEntity() as ToDo
-    newTask.item = todoField.text
+    newTask.item = todoField.text!
     newTask.managedObjectContext!.MR_saveToPersistentStoreAndWait()
   }
 
   private func editTask() -> Void {
-    println("EDIT TASK")
-    task?.item = todoField.text
+    print("EDIT TASK")
+    task?.item = todoField.text!
     task?.managedObjectContext!.MR_saveToPersistentStoreAndWait()
   }
 

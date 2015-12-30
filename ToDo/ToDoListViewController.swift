@@ -13,7 +13,7 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ToDoListItem") as! UITableViewCell
+    let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("ToDoListItem")!
     cell.textLabel!.text = todoEntities[indexPath.row].item
     return cell
   }
@@ -30,7 +30,7 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
     // TODO: 文字列比較以外の方法は？
     if segue.identifier == "edit" {
       let todoController = segue.destinationViewController as! ToDoItemViewController
-      let task = todoEntities[tableView.indexPathForSelectedRow()!.row]
+      let task = todoEntities[tableView.indexPathForSelectedRow!.row]
       todoController.task = task
     }
   }
