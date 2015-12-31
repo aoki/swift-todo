@@ -1,0 +1,15 @@
+language: swift
+
+before_install:
+  - gem install cocoapods
+  - pod install
+
+script:
+  - xctool -workspace ToDo.xcworkspace -scheme ToDo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xcodebuild -workspace ToDo.xcworkspace -scheme ToDo -destination 'platform=iOS Simulator,name=iPhone
+  6' test
+
+notifications:
+  email: false
+  slack:
+    secure: X2D0ExIqSkzXG7z9HZ8deX945VlmebdicDZ+cJjIGEMdAiLetgmA1wU/EWURC8wpE3+izmsBO/xHgFkMH2LG/uIXemVHtTo3eoKkQlU7hfrzU8fgjnfECx+xX2ku4Mi0aBRq70yYHs60wAU7/tFbuS7ng38HF5hWdcpAzhRNEIRzh0ceLXizfaryuK9VlaNvgkKjNlENoLqbUAsmJE66tqr4bWxQnuWU7ZKoXCYcGP3xSYrEcLecwT1l4mGzUtCWXtRFowfeO5ZRAu6f59ubHxIZyneIJeKNFTCu5g4q42NmRFjXtfdRboR4edEYeE71Nl+ilH1I+NMPsH7vKigY2Skgr3qoAgZ6x0FXqvVfklLSQtOPV8HXxPN253bQ1pE4A6tKLyAdooc2SBAaf91szmGtYokvx1ZUTu1tylqkNtu7mrEOzZ6v4h1NTJQAEw8jwiKA2sZLRfOkZZCAs4954Mftysu/iHQ/Zw1yovg4jZMAsOYwvutiN4aOFYd5KAKgrt2ogAyN2ILZFpqns4aNv+/YXgWKuAmlrD7I5PTbobEgJziNzZyU+kuqJbyjbioJBxoEe7qJC1q5K9UC+fXd0LftELyyBENao/x+QbzWPubCpL7gAYQkZqIBxT4WjyDfwLty07MVECvUPUjbXMNT2+RorIOddFDiql/C9WYz6Bo=
