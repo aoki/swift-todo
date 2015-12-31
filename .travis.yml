@@ -9,21 +9,19 @@ cache:
     - ${HOME}/.rvm
 
 before_install:
-  - export PATH=$PATH:vendor/bundle
-  #- gem install bundler
-  #- bundle install
-  # - brew tap homebrew/brewdler
+  #- export PATH=$PATH:vendor/bundle
+  - gem install bundler
+  - bundle install
   - brew tap Homebrew/bundle
   - brew update
   - brew bundle
-  #- gem install cocoapods -v '0.39.0'
 
 xcode_project: ToDo.xcworkspace
 xcode_scheme: ToDo
 
 script:
-  # - xctool -workspace ToDo.xcworkspace -scheme ToDo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-  # - xcodebuild -workspace ToDo.xcworkspace -scheme ToDo -destination 'platform=iOS Simulator,name=iPhone 6' test
+  - xctool -workspace ToDo.xcworkspace -scheme ToDo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xcodebuild -workspace ToDo.xcworkspace -scheme ToDo -destination 'platform=iOS Simulator,name=iPhone 6' test
 
 notifications:
   email: false
