@@ -15,7 +15,6 @@ before_install:
   # - brew tap homebrew/brewdler
   - brew tap Homebrew/bundle
   - brew update
-  - brew install bundle
   - brew bundle
   #- gem install cocoapods -v '0.39.0'
 
