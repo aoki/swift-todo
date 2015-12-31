@@ -13,9 +13,10 @@ before_install:
   #- gem install bundler
   #- bundle install
   # - brew tap homebrew/brewdler
-  # - brew update
-  # - brew install brewdler
-  # - brew bundle
+  - brew tap Homebrew/bundle
+  - brew update
+  - brew install bundle
+  - brew bundle
   #- gem install cocoapods -v '0.39.0'
 
 xcode_project: ToDo.xcworkspace
