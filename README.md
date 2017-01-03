@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.org/ringohub/swift-todo.svg?branch=master)
+[![Build Status](https://travis-ci.org/ringohub/swift-todo.svg?branch=master)](https://travis-ci.org/ringohub/swift-todo)
 
 
 # swift-todo
