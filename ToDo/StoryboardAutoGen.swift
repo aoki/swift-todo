@@ -3,8 +3,12 @@
 import Foundation
 import UIKit
 
+// swiftlint:disable file_length
+// swiftlint:disable line_length
+// swiftlint:disable type_body_length
+
 protocol StoryboardSceneType {
-  static var storyboardName : String { get }
+  static var storyboardName: String { get }
 }
 
 extension StoryboardSceneType {
@@ -13,35 +17,45 @@ extension StoryboardSceneType {
   }
 
   static func initialViewController() -> UIViewController {
-    return storyboard().instantiateInitialViewController()!
+    guard let vc = storyboard().instantiateInitialViewController() else {
+      fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
+    }
+    return vc
   }
 }
 
 extension StoryboardSceneType where Self: RawRepresentable, Self.RawValue == String {
   func viewController() -> UIViewController {
-    return Self.storyboard().instantiateViewControllerWithIdentifier(self.rawValue)
+    return Self.storyboard().instantiateViewController(withIdentifier: self.rawValue)
   }
   static func viewController(identifier: Self) -> UIViewController {
     return identifier.viewController()
   }
 }
 
-protocol StoryboardSegueType : RawRepresentable { }
+protocol StoryboardSegueType: RawRepresentable { }
 
 extension UIViewController {
-  func performSegue<S : StoryboardSegueType where S.RawValue == String>(segue: S, sender: AnyObject? = nil) {
-    performSegueWithIdentifier(segue.rawValue, sender: sender)
+  func performSegue<S: StoryboardSegueType>(segue: S, sender: AnyObject? = nil) where S.RawValue == String {
+    performSegue(withIdentifier: segue.rawValue, sender: sender)
   }
 }
 
 struct StoryboardScene {
-  enum Main : StoryboardSceneType {
+  enum Main: StoryboardSceneType {
     static let storyboardName = "Main"
+
+    static func initialViewController() -> UINavigationController {
+      guard let vc = storyboard().instantiateInitialViewController() as? UINavigationController else {
+        fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
+      }
+      return vc
+    }
   }
 }
 
 struct StoryboardSegue {
-  enum Main : String, StoryboardSegueType {
+  enum Main: String, StoryboardSegueType {
     case Edit = "edit"
   }
 }

@@ -18,29 +18,29 @@ class ToDoItemViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
-  @IBAction func cancel(sender: UIBarButtonItem) {
-    navigationController!.popViewControllerAnimated(true)
+  @IBAction func cancel(_ sender: UIBarButtonItem) {
+    navigationController!.popViewController(animated: true)
   }
 
-  @IBAction func save(sender: UIBarButtonItem) {
+  @IBAction func save(_ sender: UIBarButtonItem) {
     switch task {
-      case .None: createTask()
-      case .Some(_): editTask()
+      case .none: createTask()
+      case .some(_): editTask()
     }
-    navigationController!.popViewControllerAnimated(true)
+    navigationController!.popViewController(animated: true)
   }
 
-  private func createTask() -> Void {
+  fileprivate func createTask() -> Void {
     print("CREATAE TASK")
-    let newTask: ToDo = ToDo.MR_createEntity() as ToDo
+    let newTask: ToDo = ToDo.mr_createEntity() as ToDo
     newTask.item = todoField.text!
-    newTask.managedObjectContext!.MR_saveToPersistentStoreAndWait()
+    newTask.managedObjectContext!.mr_saveToPersistentStoreAndWait()
   }
 
-  private func editTask() -> Void {
+  fileprivate func editTask() -> Void {
     print("EDIT TASK")
     task?.item = todoField.text!
-    task?.managedObjectContext!.MR_saveToPersistentStoreAndWait()
+    task?.managedObjectContext!.mr_saveToPersistentStoreAndWait()
   }
 
   /*
