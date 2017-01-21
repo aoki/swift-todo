@@ -10,7 +10,7 @@ cache:
 
 before_install:
   #- export PATH=$PATH:vendor/bundle
-  - gem install bundler
+  - gem install bundler -v '1.11.2'
   - bundle install
   - brew tap Homebrew/bundle
   - brew update
